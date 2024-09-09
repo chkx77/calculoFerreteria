@@ -1,34 +1,46 @@
 /* General */
 body {
-  background-color: #f4f4f9;
+  background-color: #e0e7ff;
   font-family: 'Arial', sans-serif;
   color: #333;
   padding: 20px;
 }
 
 .container {
-  max-width: 450px;
+  max-width: 500px;
   margin: auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-left: 8px solid #007bff;
+  padding: 25px;
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   position: relative;
+  border-left: 12px solid #0056b3;
 }
 
 h1 {
-  color: #1d3557;
+  color: #003466;
   text-align: center;
   margin-bottom: 20px;
   font-weight: bold;
-  font-size: 2em;
-  letter-spacing: 1.2px;
+  font-size: 2.2em;
+  letter-spacing: 1.5px;
+  position: relative;
 }
 
 h1 i {
-  margin-right: 10px;
-  color: #007bff;
+  margin-right: 12px;
+  color: #ffbf00;
+  font-size: 1.4em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 /* Forms */
@@ -38,109 +50,119 @@ h1 i {
 }
 
 label {
-  font-size: 1.2em;
-  color: #1d3557;
+  font-size: 1.3em;
+  color: #003466;
   font-weight: bold;
   display: flex;
   align-items: center;
 }
 
 label i {
-  margin-right: 8px;
-  color: #007bff;
+  margin-right: 10px;
+  color: #ffbf00;
 }
 
-select,
-input {
+select, input {
   width: 100%;
-  padding: 12px;
-  font-size: 1.1em;
-  color: #333;
-  border-radius: 10px;
-  border: 2px solid #007bff;
-  background-color: #f1faee;
+  padding: 14px;
+  font-size: 1.2em;
+  color: #003466;
+  border-radius: 12px;
+  border: 2px solid #0056b3;
+  background-color: #f0f4ff;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
-select:focus,
-input:focus {
-  border-color: #457b9d;
+select:focus, input:focus {
+  border-color: #ffbf00;
   outline: none;
-  box-shadow: 0 0 8px rgba(69, 123, 157, 0.4);
-}
-
-input[type="number"]::placeholder {
-  color: #bbb;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  box-shadow: 0 0 10px rgba(255, 191, 0, 0.5);
 }
 
 input[type="number"] {
-  -moz-appearance: textfield; /* Remove spin buttons in Firefox */
-  background-color: #f1faee;
+  background-color: #f0f4ff;
 }
 
 /* Icons next to inputs */
-input[type="number"] + i,
-select + i {
+input[type="number"] + i, select + i {
   position: absolute;
   right: 15px;
   top: 40px;
-  font-size: 1.4em;
-  color: #457b9d;
+  font-size: 1.5em;
+  color: #003466;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Button */
 button {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
-  padding: 14px;
-  font-size: 1.1em;
-  border-radius: 10px;
+  padding: 16px;
+  font-size: 1.2em;
+  border-radius: 12px;
   border: none;
   width: 100%;
   cursor: pointer;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 12px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button i {
-  margin-right: 10px;
+  margin-right: 12px;
+  font-size: 1.5em;
 }
 
 button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 4px 12px rgba(0, 91, 187, 0.4);
+  background-color: #003466;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.5);
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 86, 179, 0.6);
 }
 
 /* Alerts */
 .alert {
   text-align: center;
-  padding: 12px;
-  margin-top: 15px;
-  font-size: 1.2em;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 1.3em;
   font-weight: bold;
   color: white;
-  background-color: #28a745;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .alert i {
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .alert-success {
@@ -158,16 +180,14 @@ button:focus {
   }
 
   button {
+    font-size: 1.1em;
+  }
+
+  select, input {
     font-size: 1em;
   }
 
-  select,
-  input {
-    font-size: 0.9em;
-  }
-
-  input[type="number"] + i,
-  select + i {
+  input[type="number"] + i, select + i {
     top: 32px;
   }
 }
