@@ -1,6 +1,6 @@
 /* General */
 body {
-  background-color: #e8f0fe;
+  background-color: #f4f4f9;
   font-family: 'Arial', sans-serif;
   color: #333;
   padding: 20px;
@@ -10,10 +10,11 @@ body {
   max-width: 450px;
   margin: auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-left: 8px solid #007bff;
+  position: relative;
 }
 
 h1 {
@@ -21,41 +22,56 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: bold;
-  font-size: 1.8em;
-  letter-spacing: 1px;
+  font-size: 2em;
+  letter-spacing: 1.2px;
+}
+
+h1 i {
+  margin-right: 10px;
+  color: #007bff;
 }
 
 /* Forms */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 label {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #1d3557;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+label i {
+  margin-right: 8px;
+  color: #007bff;
 }
 
 select,
 input {
   width: 100%;
-  padding: 10px;
-  font-size: 1em;
-  color: #1d3557;
-  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1em;
+  color: #333;
+  border-radius: 10px;
   border: 2px solid #007bff;
   background-color: #f1faee;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 select:focus,
 input:focus {
   border-color: #457b9d;
   outline: none;
+  box-shadow: 0 0 8px rgba(69, 123, 157, 0.4);
 }
 
 input[type="number"]::placeholder {
-  color: #999;
+  color: #bbb;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -65,32 +81,47 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield; /* Remove the spin buttons in Firefox */
+  -moz-appearance: textfield; /* Remove spin buttons in Firefox */
   background-color: #f1faee;
+}
+
+/* Icons next to inputs */
+input[type="number"] + i,
+select + i {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  font-size: 1.4em;
+  color: #457b9d;
 }
 
 /* Button */
 button {
   background-color: #007bff;
   color: white;
-  padding: 12px;
+  padding: 14px;
   font-size: 1.1em;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
   font-weight: bold;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button i {
+  margin-right: 10px;
 }
 
 button:hover {
   background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 91, 187, 0.4);
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
 }
 
 /* Alerts */
@@ -102,7 +133,14 @@ button:focus {
   font-weight: bold;
   color: white;
   background-color: #28a745;
-  border-radius: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert i {
+  margin-right: 10px;
 }
 
 .alert-success {
@@ -116,7 +154,7 @@ button:focus {
 /* Responsive */
 @media (max-width: 500px) {
   h1 {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 
   button {
@@ -126,5 +164,10 @@ button:focus {
   select,
   input {
     font-size: 0.9em;
+  }
+
+  input[type="number"] + i,
+  select + i {
+    top: 32px;
   }
 }
